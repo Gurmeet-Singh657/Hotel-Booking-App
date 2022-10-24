@@ -1,0 +1,6 @@
+.loadingImage {
+    background-color: red;
+    background: url('../../../public/loader-waiting.gif');
+    width: 100px;
+    height: 100px;
+}

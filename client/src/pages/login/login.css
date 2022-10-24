@@ -1,0 +1,73 @@
+.login {
+    width: 100%;
+    display: flex;
+}
+
+.lContainer {
+    flex: 6;
+
+}
+
+.ltop,
+.lbottom {
+    -webkit-box-shadow: 2px 4px 10px 1px rgba(0, 0, 0, 0.47);
+    box-shadow: 2px 4px 10px 1px rgba(201, 201, 201, 0.47);
+    padding: 10px;
+    margin: 20px;
+    display: flex;
+
+
+}
+
+.lmainhead {
+    color: lightgray;
+    font-size: 20px;
+}
+
+.lForm {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: space-between;
+    align-items: center;
+
+
+}
+
+.lformInput {
+    width: 40%;
+
+
+}
+
+.lButton {
+    width: 150px;
+    padding: 10px;
+    border: none;
+    background-color: rgb(131, 131, 234);
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.lInput {
+    width: 100%;
+    padding: 5px;
+    border: none;
+    border-bottom: 1px solid gray;
+}
+
+.lLabel {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+}
+
+.lerrormessage {
+    background-color: rgb(228, 142, 142);
+    color: white;
+    padding: 10px;
+    border-radius: 20px;
+}
