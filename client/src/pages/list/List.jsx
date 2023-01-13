@@ -24,56 +24,58 @@ const List = () => {
     const [FinalPeoplecnt, setFinalPeoplecnt] = useState(new Array(1000).fill(500));
     useEffect(() => {
         setLoading(true);
-        axios.get(`https://gurmeet-booking-app-backend.herokuapp.com/api/hotels?city=${destination}&min=${min - 1 || 0}&max=${max + 1 || 999}`).then(res => {
+        axios.get(`https://hotel-managment-system.onrender.com/api/hotels?city=${destination}&min=${min - 1 || 0}&max=${max + 1 || 999}`).then(res => {
             setData(res.data);
-            FinalFunc().then(() => {
-                FinalPeoplecount().then(() => {
-                    setLoading(false);
-                });
-            })
+            // FinalFunc().then(() => {
+            //     FinalPeoplecount().then(() => {
+            //         setLoading(false);
+            //     });
+            // })
+            setLoading(false);
         })
     }, [options.maxPeople, options.room, city, dates, min, max]);
 
 
 
-    const FinalFunc = async () => {
-        const Calculatefunc = async (curr) => {
-            const res = await axios.get(`https://gurmeet-booking-app-backend.herokuapp.com/api/hotels/room/${curr._id}`);
-            let ans = 0;
-            await Promise.all(res?.data?.map((cur) => {
-                ans += cur.roomNumbers.length;
-            }));
-            console.log(ans);
-            return ans;
-        }
-        const Finalans = await Promise.all(
-            data.map(Calculatefunc)
-        );
-        setFinalans(Finalans);
-        return true;
-    }
-    const FinalPeoplecount = async () => {
-        const Calculatefunc = async (curr) => {
-            const res = await axios.get(`https://gurmeet-booking-app-backend.herokuapp.com/api/hotels/room/${curr._id}`);
-            let ans = 0;
-            await Promise.all(res?.data?.map((cur) => {
-                ans = Math.max(ans, cur.maxPeople);
-            }))
-            return ans;
-        }
-        const Finalans = await Promise.all(
-            data.map(Calculatefunc)
-        )
-        setFinalPeoplecnt(Finalans);
-        return true;
-    }
+    // const FinalFunc = async () => {
+    //     const Calculatefunc = async (curr) => {
+    //         const res = await axios.get(`https://hotel-managment-system.onrender.com/api/hotels/room/${curr._id}`);
+    //         let ans = 0;
+    //         await Promise.all(res?.data?.map((cur) => {
+    //             ans += cur.roomNumbers.length;
+    //         }));
+    //         console.log(ans);
+    //         return ans;
+    //     }
+    //     const Finalans = await Promise.all(
+    //         data.map(Calculatefunc)
+    //     );
+    //     setFinalans(Finalans);
+    //     return true;
+    // }
+    // const FinalPeoplecount = async () => {
+    //     const Calculatefunc = async (curr) => {
+    //         const res = await axios.get(`https://hotel-managment-system.onrender.com/api/hotels/room/${curr._id}`);
+    //         let ans = 0;
+    //         await Promise.all(res?.data?.map((cur) => {
+    //             ans = Math.max(ans, cur.maxPeople);
+    //         }))
+    //         return ans;
+    //     }
+    //     const Finalans = await Promise.all(
+    //         data.map(Calculatefunc)
+    //     )
+    //     console.log(Finalans);
+    //     setFinalPeoplecnt(Finalans);
+    //     return true;
+    // }
     const { dispatch } = useContext(SearchContext);
     const [showhotelsarr, setShowhotelsarr] = useState([]);
     const handleClick = () => {
         dispatch({ type: "NEW_SEARCH", payload: { city: destination, dates: cdates, options: { room, maxPeople } } });
     }
-    const isroomavail = finalans.some(item => item >= options.room);
-    const isPeopleavail = FinalPeoplecnt.some(item => item >= options.maxPeople);
+    // const isroomavail = finalans.some(item => item >= options.room);
+    // const isPeopleavail = FinalPeoplecnt.some(item => item >= options.maxPeople);
     return (
         <div>
             <Navbar />
@@ -141,10 +143,10 @@ const List = () => {
                             {data.length > 0 &&
                                 data.map((item, index) => (
                                     <>
-                                        <SearchItem item={item} key={item._id} totalrooms={finalans[index]} totalpeople={FinalPeoplecnt[index]} />
+                                        <SearchItem item={item} key={item._id} />
                                     </>
                                 ))}
-                            {(data.length === 0 || !isPeopleavail || !isroomavail) &&
+                            {(data.length === 0) &&
                                 <div className="nothoteltoshow">No Hotel to Show Here! Try Searching for another parameter</div>
                             }
                         </>

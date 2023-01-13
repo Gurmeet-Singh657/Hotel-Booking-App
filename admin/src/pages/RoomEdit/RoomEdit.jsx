@@ -18,7 +18,7 @@ const RoomEdit = () => {
     const path = location.pathname.split("/")[3];
     // console.log(path);
 
-    const { data, loading, error } = useFetch(`https://gurmeet-booking-app-backend.herokuapp.com/api/hotels`);
+    const { data, loading, error } = useFetch(`https://hotel-managment-system.onrender.com/api/hotels`);
     const [rooms, setRooms] = useState([]);
 
     const handleChange = (e) => {
@@ -36,7 +36,7 @@ const RoomEdit = () => {
     // CallFunc();
     useEffect(() => {
         const FindDetail = async () => {
-            const res = await axios.get(`https://gurmeet-booking-app-backend.herokuapp.com/api/rooms/${path}`);
+            const res = await axios.get(`https://hotel-managment-system.onrender.com/api/rooms/${path}`);
             setInfo(res.data);
             // console.log(res.data);
             const roomsnums = await Promise.all(res.data.roomNumbers.map((curr) => {
@@ -52,7 +52,7 @@ const RoomEdit = () => {
         e.preventDefault();
         const roomNumbers = rooms.split(",").map((room) => ({ number: room }));
         try {
-            await axios.put(`https://gurmeet-booking-app-backend.herokuapp.com/api/rooms/${path}`, { ...info, roomNumbers });
+            await axios.put(`https://hotel-managment-system.onrender.com/api/rooms/${path}`, { ...info, roomNumbers });
             setErrr(false);
             setSuccess("Room Updated Successfully ✅");
         } catch (err) {

@@ -33,13 +33,13 @@ const New = ({ inputs, title }) => {
                     ...info,
                     img: url,
                 };
-                await axios.post(`https://gurmeet-booking-app-backend.herokuapp.com/api/auth/register`, newUser);
+                await axios.post(`https://hotel-managment-system.onrender.com/api/auth/register`, newUser);
                 setError(false);
                 setSuccess("User Created Successfully ✅");
             }
             else {
                 const newUser = { ...info };
-                await axios.post(`https://gurmeet-booking-app-backend.herokuapp.com/api/auth/register`, newUser);
+                await axios.post(`https://hotel-managment-system.onrender.com/api/auth/register`, newUser);
                 setError(false);
                 setSuccess("User Created Successfully ✅");
             }

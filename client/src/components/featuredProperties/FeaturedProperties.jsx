@@ -6,7 +6,7 @@ import { useState } from "react";
 
 const FeaturedProperties = () => {
 
-    const { data, loading, error } = useFetch("https://gurmeet-booking-app-backend.herokuapp.com/api/hotels?featured=true");
+    const { data, loading, error } = useFetch("https://hotel-managment-system.onrender.com/api/hotels?featured=true");
     const [slideIndex, setSlideIndex] = useState(0)
     const IncreaseSlider = () => {
         if (slideIndex !== data.length - 1) {

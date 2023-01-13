@@ -17,7 +17,7 @@ const UserEdit = ({ inputs, title }) => {
     };
     const location = useLocation();
     const path = location.pathname.split("/")[3];
-    const { data, loading, error } = useFetch(`https://gurmeet-booking-app-backend.herokuapp.com/api/users/${path}`);
+    const { data, loading, error } = useFetch(`https://hotel-managment-system.onrender.com/api/users/${path}`);
     // console.log(data);
     const [info, setInfo] = useState(data);
     // console.log(info);
@@ -40,13 +40,13 @@ const UserEdit = ({ inputs, title }) => {
                     ...info,
                     img: url,
                 };
-                await axios.put(`https://gurmeet-booking-app-backend.herokuapp.com/api/users/${path}`, updatedUser);
+                await axios.put(`https://hotel-managment-system.onrender.com/api/users/${path}`, updatedUser);
                 setErrr(false);
                 setSuccess("User Updated Successfully ✅");
             }
             else {
                 const updatedUser = { ...info };
-                await axios.put(`https://gurmeet-booking-app-backend.herokuapp.com/api/users/${path}`, updatedUser);
+                await axios.put(`https://hotel-managment-system.onrender.com/api/users/${path}`, updatedUser);
                 setErrr(false);
                 setSuccess("User Updated Successfully ✅");
 

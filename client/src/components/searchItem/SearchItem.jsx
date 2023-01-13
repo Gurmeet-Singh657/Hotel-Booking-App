@@ -10,7 +10,7 @@ const SearchItem = ({ item, totalrooms, totalpeople }) => {
     return (
         <>
             {
-                totalrooms >= options.room && totalpeople >= options.maxPeople &&
+                // totalrooms >= options.room && totalpeople >= options.maxPeople &&
                 < div className="searchItem">
                     <img
                         src={item.photos[0] ? item.photos[0] : "https://media.istockphoto.com/vectors/hotel-hotel-icon-fivestar-hotel-on-a-white-background-vector-id961189076?k=20&m=961189076&s=612x612&w=0&h=T3p2qARooIUEOOAJOWdwFM2wyfE81wkqnOHTZcczN24="}

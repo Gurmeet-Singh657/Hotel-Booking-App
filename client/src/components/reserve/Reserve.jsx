@@ -12,7 +12,7 @@ import { AuthContext } from "../../context/AuthContext"
 const Reserve = ({ setOpen, hotelId }) => {
     const [selectedRooms, setSelectedRooms] = useState([]);
     const [selectedRoomNum, setSelectedRoomNum] = useState([]);
-    const { data, loading, error } = useFetch(`https://gurmeet-booking-app-backend.herokuapp.com/api/hotels/room/${hotelId}`);
+    const { data, loading, error } = useFetch(`https://hotel-managment-system.onrender.com/api/hotels/room/${hotelId}`);
     const { user } = useContext(AuthContext);
     const { dates } = useContext(SearchContext);
 
@@ -58,7 +58,7 @@ const Reserve = ({ setOpen, hotelId }) => {
         try {
             await Promise.all(
                 selectedRooms.map(async (roomId) => {
-                    const res = await axios.put(`https://gurmeet-booking-app-backend.herokuapp.com/api/rooms/availability/${roomId.split('#')[0]}`, {
+                    const res = await axios.put(`https://hotel-managment-system.onrender.com/api/rooms/availability/${roomId.split('#')[0]}`, {
                         dates: alldates,
                     });
                     return res.data;
@@ -66,7 +66,7 @@ const Reserve = ({ setOpen, hotelId }) => {
             );
             await Promise.all(
                 selectedRooms.map(async (roomId) => {
-                    const res = await axios.put(`https://gurmeet-booking-app-backend.herokuapp.com/api/users/userupdate/roomavail`, {
+                    const res = await axios.put(`https://hotel-managment-system.onrender.com/api/users/userupdate/roomavail`, {
                         userId: user._id,
                         roomId: roomId.split('#')[0],
                         roomNum: roomId.split('#')[1],
@@ -78,7 +78,7 @@ const Reserve = ({ setOpen, hotelId }) => {
             );
             await Promise.all(
                 selectedRooms.map(async (roomId) => {
-                    const res = await axios.put(`https://gurmeet-booking-app-backend.herokuapp.com/api/hotels/userupdate/roomavail`, {
+                    const res = await axios.put(`https://hotel-managment-system.onrender.com/api/hotels/userupdate/roomavail`, {
                         userId: user._id,
                         roomId: roomId.split('#')[0],
                         roomNum: roomId.split('#')[1],

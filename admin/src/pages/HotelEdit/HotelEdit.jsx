@@ -15,7 +15,7 @@ const HotelEdit = ({ inputs, title }) => {
     const [errr, setErrr] = useState(false);
     const location = useLocation();
     const path = location.pathname.split("/")[3];
-    const { data, loading, error } = useFetch(`https://gurmeet-booking-app-backend.herokuapp.com/api/hotels/find/${path}`);
+    const { data, loading, error } = useFetch(`https://hotel-managment-system.onrender.com/api/hotels/find/${path}`);
     useEffect(() => {
         axios.get('/api/rooms').then((res) => {
             setRooms(res.data);
@@ -45,13 +45,13 @@ const HotelEdit = ({ inputs, title }) => {
                 const updatedhotel = {
                     ...info, rooms, photos: list,
                 }
-                await axios.put(`https://gurmeet-booking-app-backend.herokuapp.com/api/hotels/${path}`, updatedhotel);
+                await axios.put(`https://hotel-managment-system.onrender.com/api/hotels/${path}`, updatedhotel);
                 setErrr(false);
                 setSuccess("Hotel Updated Successfully ✅");
             }
             else {
                 const updatedHotel = { ...info };
-                await axios.put(`https://gurmeet-booking-app-backend.herokuapp.com/api/hotels/${path}`, updatedHotel);
+                await axios.put(`https://hotel-managment-system.onrender.com/api/hotels/${path}`, updatedHotel);
                 setErrr(false);
                 setSuccess("Hotel Updated Successfully ✅");
             }

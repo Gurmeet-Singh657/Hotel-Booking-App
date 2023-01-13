@@ -18,7 +18,7 @@ const UserEdit = ({ inputs }) => {
     };
     const location = useLocation();
     const { user, dispatch } = useContext(AuthContext);
-    const { data, loading, error } = useFetch(`https://gurmeet-booking-app-backend.herokuapp.com/api/users/${user._id}`);
+    const { data, loading, error } = useFetch(`https://hotel-managment-system.onrender.com/api/users/${user._id}`);
     const [info, setInfo] = useState(data);;
 
     const handleClick = async (e) => {
@@ -40,7 +40,7 @@ const UserEdit = ({ inputs }) => {
                     img: url,
                 };
                 try {
-                    const res = await axios.put(`https://gurmeet-booking-app-backend.herokuapp.com/api/users/${user._id}`, updatedUser);
+                    const res = await axios.put(`https://hotel-managment-system.onrender.com/api/users/${user._id}`, updatedUser);
                     setSuccess("Successfully Updated Profile ✅ !");
                     dispatch({ type: "LOGIN_SUCCESS", payload: res.data.details });
                     console.log(user);
@@ -54,7 +54,7 @@ const UserEdit = ({ inputs }) => {
             else {
                 const updatedUser = { ...info };
                 try {
-                    const res = await axios.put(`https://gurmeet-booking-app-backend.herokuapp.com/api/users/${user._id}`, updatedUser);
+                    const res = await axios.put(`https://hotel-managment-system.onrender.com/api/users/${user._id}`, updatedUser);
                     setSuccess("Successfully Updated Profile ✅ !");
                     dispatch({ type: "LOGIN_SUCCESS", payload: res.data.details });
                     setMyerror(false);

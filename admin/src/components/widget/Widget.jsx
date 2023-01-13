@@ -21,17 +21,17 @@ const Widget = ({ type }) => {
     const [loading, setLoading] = useState(false);
     useEffect(() => {
         const Findfunc = async () => {
-            const user = await axios.get('https://gurmeet-booking-app-backend.herokuapp.com/api/users');
+            const user = await axios.get('https://hotel-managment-system.onrender.com/api/users');
             setUsers(user.data);
-            const hotel = await axios.get('https://gurmeet-booking-app-backend.herokuapp.com/api/hotels');
+            const hotel = await axios.get('https://hotel-managment-system.onrender.com/api/hotels');
             setHotels(hotel.data);
-            const rooms = await axios.get('https://gurmeet-booking-app-backend.herokuapp.com/api/rooms');
+            const rooms = await axios.get('https://hotel-managment-system.onrender.com/api/rooms');
             setRooms(rooms.data);
-            const todayuser = await axios.get('https://gurmeet-booking-app-backend.herokuapp.com/api/users/userdata/todaysdata');
+            const todayuser = await axios.get('https://hotel-managment-system.onrender.com/api/users/userdata/todaysdata');
             setTodaysusers(todayuser.data);
-            const todayhotels = await axios.get('https://gurmeet-booking-app-backend.herokuapp.com/api/hotels/hotelsdata/todaysdata');
+            const todayhotels = await axios.get('https://hotel-managment-system.onrender.com/api/hotels/hotelsdata/todaysdata');
             setTodayshotels(todayhotels.data);
-            const todayrooms = await axios.get('https://gurmeet-booking-app-backend.herokuapp.com/api/rooms/roomsdata/todaysdata');
+            const todayrooms = await axios.get('https://hotel-managment-system.onrender.com/api/rooms/roomsdata/todaysdata');
             setTodaysrooms(todayrooms.data);
         }
         Findfunc();

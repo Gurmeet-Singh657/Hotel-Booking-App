@@ -14,7 +14,7 @@ const NewRoom = () => {
     const [hotelId, setHotelId] = useState(undefined);
     const [errr, setErrr] = useState(false);
 
-    const { data, loading, error } = useFetch("https://gurmeet-booking-app-backend.herokuapp.com/api/hotels");
+    const { data, loading, error } = useFetch("https://hotel-managment-system.onrender.com/api/hotels");
 
     const handleChange = (e) => {
         setInfo((prev) => ({ ...prev, [e.target.id]: e.target.value }));
@@ -29,7 +29,7 @@ const NewRoom = () => {
         }
         const roomNumbers = rooms.toString().split(",").map((room) => ({ number: room }));
         try {
-            await axios.post(`https://gurmeet-booking-app-backend.herokuapp.com/api/rooms/${hotelId}`, { ...info, roomNumbers });
+            await axios.post(`https://hotel-managment-system.onrender.com/api/rooms/${hotelId}`, { ...info, roomNumbers });
             setErrr(false);
             setSuccess("Room Created Successfully ✅");
         } catch (err) {

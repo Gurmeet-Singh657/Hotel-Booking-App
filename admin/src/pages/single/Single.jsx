@@ -15,7 +15,7 @@ import { userInputs } from "../../formSource.js"
 const Single = () => {
     const location = useLocation();
     const path = location.pathname.split("/")[2];
-    const { data, loading, error } = useFetch(`https://gurmeet-booking-app-backend.herokuapp.com/api/users/${path}`);
+    const { data, loading, error } = useFetch(`https://hotel-managment-system.onrender.com/api/users/${path}`);
     // console.log(data);
     const navigate = useNavigate("/");
     return (

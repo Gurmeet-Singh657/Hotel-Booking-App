@@ -13,7 +13,7 @@ const NewHotel = () => {
     const [rooms, setRooms] = useState([]);
     const [success, setSuccess] = useState(false);
     const [errr, setErrr] = useState(false);
-    const { data, loading, error } = useFetch("https://gurmeet-booking-app-backend.herokuapp.com/api/rooms");
+    const { data, loading, error } = useFetch("https://hotel-managment-system.onrender.com/api/rooms");
 
     const handleChange = (e) => {
         setInfo((prev) => ({ ...prev, [e.target.id]: e.target.value }));
@@ -46,7 +46,7 @@ const NewHotel = () => {
             const newhotel = {
                 ...info, rooms, photos: list,
             }
-            await axios.post("https://gurmeet-booking-app-backend.herokuapp.com/api/hotels", newhotel);
+            await axios.post("https://hotel-managment-system.onrender.com/api/hotels", newhotel);
             setErrr(false);
             setSuccess("Hotel Created Successfully ✅");
         } catch (err) {

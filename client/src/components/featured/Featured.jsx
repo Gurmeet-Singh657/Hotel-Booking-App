@@ -14,9 +14,9 @@ const Featured = () => {
     const [loading, setLoading] = useState(false);
     useEffect(() => {
         setLoading(true);
-        axios.get('https://gurmeet-booking-app-backend.herokuapp.com/api/hotels/finddistinctcities').then((res) => {
+        axios.get('https://hotel-managment-system.onrender.com/api/hotels/finddistinctcities').then((res) => {
             setAllCities(res.data);
-            return axios.get(`https://gurmeet-booking-app-backend.herokuapp.com/api/hotels/countByCity?cities=${res.data.join(",").toString()}`)
+            return axios.get(`https://hotel-managment-system.onrender.com/api/hotels/countByCity?cities=${res.data.join(",").toString()}`)
         }).then((res) => {
             setData(res.data);
             setLoading(false);

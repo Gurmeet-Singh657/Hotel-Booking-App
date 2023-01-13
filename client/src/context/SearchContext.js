@@ -1,4 +1,5 @@
-import { createContext, useReducer } from "react"
+import { createContext, useEffect, useReducer } from "react"
+import axios from "axios";
 
 const INITIAL_STATE = {
     city: "",

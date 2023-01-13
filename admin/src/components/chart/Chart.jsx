@@ -21,7 +21,7 @@ const Chart = ({ aspect, title }) => {
     const [currdata, setCurrdata] = useState([]);
     useEffect(() => {
         const Findfunc = async () => {
-            const res = await axios.get("https://gurmeet-booking-app-backend.herokuapp.com/api/hotels/getdata/Months");
+            const res = await axios.get("https://hotel-managment-system.onrender.com/api/hotels/getdata/Months");
             setCurrdata(res.data);
         }
         Findfunc();

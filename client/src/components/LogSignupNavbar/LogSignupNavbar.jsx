@@ -13,7 +13,7 @@ const LogSignupNavbar = () => {
     const navigate = useNavigate();
     const [details, setDetails] = useState({});
     const { user, dispatch } = useContext(AuthContext);
-    const { data, loading, error } = useFetch(`https://gurmeet-booking-app-backend.herokuapp.com/api/users/${user._id}`);
+    const { data, loading, error } = useFetch(`https://hotel-managment-system.onrender.com/api/users/${user._id}`);
     const logouthotel = () => {
         dispatch({ type: "LOGOUT" });
         navigate("/");

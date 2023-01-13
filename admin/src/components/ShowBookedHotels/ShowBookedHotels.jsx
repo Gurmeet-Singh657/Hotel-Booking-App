@@ -15,7 +15,7 @@ import { faFileCircleExclamation } from "@fortawesome/free-solid-svg-icons";
 
 const ShowBookedHotels = ({ path }) => {
     const { user } = useContext(AuthContext);
-    const { data, loading, error } = useFetch(`https://gurmeet-booking-app-backend.herokuapp.com/api/users/${path}`);
+    const { data, loading, error } = useFetch(`https://hotel-managment-system.onrender.com/api/users/${path}`);
     return (
         <div className='showbookedhotels'>
             <div className="showbookedhotelsheader">Hotels Booked</div>

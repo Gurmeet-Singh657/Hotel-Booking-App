@@ -11,7 +11,7 @@ import ShowBookedHotels from "../../components/ShowBookedHotels/ShowBookedHotels
 const Single = () => {
     const location = useLocation();
     const { user } = useContext(AuthContext);
-    const { data, loading, error } = useFetch(`https://gurmeet-booking-app-backend.herokuapp.com/api/users/${user._id}`);
+    const { data, loading, error } = useFetch(`https://hotel-managment-system.onrender.com/api/users/${user._id}`);
     const navigate = useNavigate("/");
     return (
         <div className="single">

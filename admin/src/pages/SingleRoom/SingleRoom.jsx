@@ -13,7 +13,7 @@ import Roomwithunavail from "../../components/Roomwithunavail/Roomwithunavail"
 const SingleRoom = () => {
     const location = useLocation();
     const path = location.pathname.split("/")[2];
-    const { data, loading, error } = useFetch(`https://gurmeet-booking-app-backend.herokuapp.com/api/rooms/${path}`);
+    const { data, loading, error } = useFetch(`https://hotel-managment-system.onrender.com/api/rooms/${path}`);
     const navigate = useNavigate("/");
     return (
         <>

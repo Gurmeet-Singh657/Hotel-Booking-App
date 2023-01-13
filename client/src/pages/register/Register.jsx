@@ -38,7 +38,7 @@ const Register = ({ inputs, title }) => {
                     img: url,
                 };
                 try {
-                    const res = await axios.post(`https://gurmeet-booking-app-backend.herokuapp.com/api/auth/register`, newUser);
+                    const res = await axios.post(`https://hotel-managment-system.onrender.com/api/auth/register`, newUser);
                     setSuccess("You are Successfully Registerd ✅ !");
                     dispatch({ type: "LOGIN_SUCCESS", payload: res.data.details });
                     setError(false);
@@ -53,7 +53,7 @@ const Register = ({ inputs, title }) => {
             else {
                 const newUser = { ...info };
                 try {
-                    const res = await axios.post(`https://gurmeet-booking-app-backend.herokuapp.com/api/auth/register`, newUser);
+                    const res = await axios.post(`https://hotel-managment-system.onrender.com/api/auth/register`, newUser);
                     setSuccess("You are Successfully Registered ✅ !");
                     dispatch({ type: "LOGIN_SUCCESS", payload: res.data.details });
                     navigate("/");

@@ -13,7 +13,7 @@ const Datatable = ({ columns }) => {
     const navigate = useNavigate("/");
     const location = useLocation();
     const path = location.pathname.split("/")[1];
-    const { data, loading, error } = useFetch(`https://gurmeet-booking-app-backend.herokuapp.com/api/${path}`);
+    const { data, loading, error } = useFetch(`https://hotel-managment-system.onrender.com/api/${path}`);
     // console.log(data);
     const [list, setList] = useState();
     useEffect(() => {
@@ -22,7 +22,7 @@ const Datatable = ({ columns }) => {
 
     const handleDelete = async (id) => {
         try {
-            await axios.delete(`https://gurmeet-booking-app-backend.herokuapp.com/api/${path}/${id}`);
+            await axios.delete(`https://hotel-managment-system.onrender.com/api/${path}/${id}`);
             setList(list.filter((item) => item._id !== id));
         } catch (err) {
 
