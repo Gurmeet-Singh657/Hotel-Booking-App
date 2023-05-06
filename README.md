@@ -23,7 +23,8 @@ Discover the easiest way to book your next hotel stay with our user-friendly hot
  -  Frontend server is running at **port 4001** . 
 
 `Video Link :- `: [Click here]()
-`Website Live Link :- `: [Click here](https://gurmeet-singh-resume-builder.web.app/)
+`Hotel Booking Link :- `: [Click here](https://hotel-booking-app-client.web.app/)
+`Hotel Adminstration Link :- `: [Click here](https://booking-app-admin.web.app/)
 
 ### Home Page
 ![Home Page ](https://i.imgur.com/H01tyfc.jpg)
